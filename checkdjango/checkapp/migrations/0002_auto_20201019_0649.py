@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.RenameField(
             model_name='album',
             old_name='hours',
-            new_name='NumberOfSongs',
+            new_name='number_of_songs',
         ),
         migrations.RenameField(
             model_name='group',
@@ -29,11 +29,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='clips',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.group'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.album'),
         ),
         migrations.AlterField(
-            model_name='product',
+            model_name='song',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.group'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.clips'),
         ),
     ]

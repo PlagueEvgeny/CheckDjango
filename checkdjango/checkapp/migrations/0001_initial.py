@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='RockCategory',
+            name='Category',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=128)),
@@ -21,14 +21,14 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name='Song',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=200)),
                 ('desc', models.TextField(blank=True)),
                 ('hours', models.IntegerField(default=0)),
                 ('is_active', models.BooleanField(default=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.rockcategory')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.category')),
             ],
         ),
         migrations.CreateModel(
@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('desc', models.TextField(blank=True)),
                 ('hours', models.IntegerField(default=0)),
                 ('is_active', models.BooleanField(default=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.rockcategory')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.category')),
             ],
         ),
         migrations.CreateModel(
@@ -50,7 +50,7 @@ class Migration(migrations.Migration):
                 ('desc', models.TextField(blank=True)),
                 ('hours', models.IntegerField(default=0)),
                 ('is_active', models.BooleanField(default=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.rockcategory')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.category')),
             ],
         ),
         migrations.CreateModel(
@@ -61,7 +61,7 @@ class Migration(migrations.Migration):
                 ('desc', models.TextField(blank=True)),
                 ('hours', models.IntegerField(default=0)),
                 ('is_active', models.BooleanField(default=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.rockcategory')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='checkapp.category')),
             ],
         ),
     ]
