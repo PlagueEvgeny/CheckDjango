@@ -21,6 +21,10 @@ from django.urls import path
 
 urlpatterns = [
     path('', checkapp.index),
+    path('catalog/category/<int:pk>/', checkapp.group, name='group'),
+    path('catalog/category/album/<int:pk>/', checkapp.album, name='album'),
+    path('catalog/category/album/song/<int:pk>/', checkapp.song, name='song'),
+    path('catalog/category/album/song/clips/<int:pk>/', checkapp.clips, name='clips'),
     path('catalog/', checkapp.catalog),
     path('admin/', admin.site.urls),
 

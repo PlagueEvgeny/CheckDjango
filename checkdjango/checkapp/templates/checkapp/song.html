@@ -1,17 +1,16 @@
 {% extends 'checkapp/base.html' %}
 
 {% block content %}
-    <h1>Каталог</h1>
-    <div class="catalog-menu">
+    <h1>Страница Песен</h1>
+    <div class="courses-menu">
         <ul>
-            {% for item in categories %}
+            {% for item in songes %}
                 <li>
-                    <a href="{% url 'group' item.pk %}">
+                    <a href="{% url 'clips' item.pk %}">
                         {{ item }}
                     </a>
                 </li>
             {% endfor %}
         </ul>
     </div>
-
 {% endblock %}

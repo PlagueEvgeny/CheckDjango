@@ -32,6 +32,7 @@ class Album(models.Model):
     category = models.ForeignKey(Group,
                                  on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to=None, default=100, verbose_name="Изображение")
     desc = models.TextField(blank=True)
     number_of_songs = models.IntegerField(default=0)
 
