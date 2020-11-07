@@ -45,9 +45,11 @@ def song(request, pk):
 
 
 def song_page(request, pk):
-    songes = Song.objects.filter(category_id=pk)
+    songes = Song.objects.objects.get(pk=pk)
     context = {
         'songes': songes,
         'page_title': 'страница песен'
     }
     return render(request, 'checkapp/song_page.html', context)
+
+
