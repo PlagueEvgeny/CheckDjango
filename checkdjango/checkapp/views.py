@@ -45,9 +45,9 @@ def song(request, pk):
 
 
 def song_page(request, pk):
-    songe = Song.objects.objects.get(pk=pk)
+    song = Song.objects.get(pk=pk)
     context = {
-        'songe': songe,
+        'song': song,
         'page_title': 'страница песен'
     }
     return render(request, 'checkapp/song_page.html', context)
