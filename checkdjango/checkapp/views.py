@@ -44,10 +44,10 @@ def song(request, pk):
     return render(request, 'checkapp/song.html', context)
 
 
-def clips(request, pk):
-    clipses = Clips.objects.filter(category_id=pk)
+def song_page(request, pk):
+    course = Song.objects.get(pk=pk)
     context = {
-        'clipses': clipses,
-        'page_title': 'страница песен'
+        'course': course,
+        'page_title': 'страница курса'
     }
-    return render(request, 'checkapp/clips.html', context)
+    return render(request, 'mainapp/course_page.html', context)
