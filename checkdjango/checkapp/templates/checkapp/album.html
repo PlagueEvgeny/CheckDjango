@@ -6,7 +6,7 @@
         <ul>
             {% for item in albumes %}
                 <li>
-                    <a href="{% url 'song' item.pk %}">
+                    <a href="{% url 'main:song' item.pk %}">
                         {{ item }}
                     </a>
                 </li>

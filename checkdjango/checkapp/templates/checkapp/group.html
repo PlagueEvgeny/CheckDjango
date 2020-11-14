@@ -6,7 +6,7 @@
         <ul>
             {% for item in Groupes %}
                 <li>
-                    <a href="{% url 'album' item.pk %}">
+                    <a href="{% url 'main:album' item.pk %}">
                         {{ item }}
                     </a>
                 </li>
