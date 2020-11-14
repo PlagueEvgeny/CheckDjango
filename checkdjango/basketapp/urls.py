@@ -22,7 +22,7 @@ from django.urls import path, include
 app_name = 'basketapp'
 
 urlpatterns = [
-    path('', basketapp.index),
+    path('', basketapp.index, name='index'),
 
 
 ]
