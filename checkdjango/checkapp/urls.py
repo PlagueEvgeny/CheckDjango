@@ -19,13 +19,17 @@ import checkapp.views as checkapp
 from django.contrib import admin
 from django.urls import path, include
 
+app_name = 'checkapp'
+
 urlpatterns = [
     path('', checkapp.index),
-    path('auth/', include('authapp.urls', namespace='auth')),
-    path('basket/', include('basketapp.urls', namespace='basketapp')),
-    path('catalog/', include('checkapp.urls', namespace='checkapp')),
+    path('catalog/', checkapp.catalog),
+    path('catalog/category/<int:pk>/', checkapp.group, name='group'),
+    path('catalog/category/album/<int:pk>/', checkapp.album, name='album'),
+    path('catalog/category/album/song/<int:pk>/', checkapp.song, name='song'),
+    path('catalog/category/album/song/song_page/<int:pk>/', checkapp.song_page, name='song_page'),
 
 
-    path('admin/', admin.site.urls),
+
 
 ]
