@@ -24,6 +24,7 @@ app_name = 'basketapp'
 urlpatterns = [
     path('', basketapp.index, name='index'),
     path('add/<int:songe_id>/', basketapp.add, name='add'),
+    path('remove/<int:songe_basket_id>/', basketapp.remove, name='remove'),
 
 
 ]

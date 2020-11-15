@@ -5,7 +5,7 @@
     <div class="courses-menu">
         <ul>
             {% for item in Groupes %}
-                <li>
+                <li class="list-group-item list-group-item-danger">
                     <a href="{% url 'main:album' item.pk %}">
                         {{ item }}
                     </a>

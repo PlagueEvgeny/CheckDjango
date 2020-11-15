@@ -1,14 +1,19 @@
+from basketapp.models import SongBasket
+from checkapp.models import Song
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from basketapp.models import SongBasket
 from django.urls import reverse
 
-from checkapp.models import Song
 
 
 def index(request):
-    return render(request, 'basketapp/index.html')
+    items = SongBasket.objects.filter(user=request.user)
+    context = {
+        'object_list': items,
+    }
+
+    return render(request, 'basketapp/basket.html', context)
 
 
 def add(request, songe_id):
@@ -23,3 +28,8 @@ def add(request, songe_id):
     #   reverse('checkapp:song_page',
     #           kwargs={'songe_pk': songe.songe_id})
     #)
+
+def remove(request, songe_basket_id):
+    item = SongBasket.objects.get(id=songe_basket_id)
+    item.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
