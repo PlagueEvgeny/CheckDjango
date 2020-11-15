@@ -1,6 +1,6 @@
 from basketapp.models import SongBasket
 from checkapp.models import Song
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 
 from django.urls import reverse
@@ -13,7 +13,7 @@ def index(request):
         'object_list': items,
     }
 
-    return render(request, 'basketapp/basket.html', context)
+    return render(request, 'basketapp/index.html', context)
 
 
 def add(request, songe_id):
@@ -30,6 +30,9 @@ def add(request, songe_id):
     #)
 
 def remove(request, songe_basket_id):
-    item = SongBasket.objects.get(id=songe_basket_id)
-    item.delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    if request.is_ajax():
+        item = SongBasket.objects.get(id=songe_basket_id)
+        item.delete()
+        # return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return JsonResponse({'status': 'ok',
+                             'songe_basket_id': songe_basket_id})
