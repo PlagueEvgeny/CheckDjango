@@ -2,11 +2,11 @@
 
 {% block content %}
     <h1>Каталог</h1>
-    <div class="catalog-menu">
+    <div >
         <ul>
             {% for item in categories %}
-                <li>
-                    <a href="{% url 'group' item.pk %}">
+                <li class="list-group-item list-group-item-primary">
+                    <a href="{% url 'main:group' item.pk %}">
                         {{ item }}
                     </a>
                 </li>

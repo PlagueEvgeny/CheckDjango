@@ -23,11 +23,11 @@ app_name = 'checkapp'
 
 urlpatterns = [
     path('', checkapp.index),
-    path('catalog/', checkapp.catalog),
+    path('catalog/', checkapp.catalog, name='catalog'),
     path('catalog/category/<int:pk>/', checkapp.group, name='group'),
     path('catalog/category/album/<int:pk>/', checkapp.album, name='album'),
     path('catalog/category/album/song/<int:pk>/', checkapp.song, name='song'),
-    path('catalog/category/album/song/song_page/<int:pk>/', checkapp.song_page, name='song_page'),
+    path('catalog/category/album/song/song_page/<int:songe_pk>/', checkapp.song_page, name='song_page'),
 
 
 

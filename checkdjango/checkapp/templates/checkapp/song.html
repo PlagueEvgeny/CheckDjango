@@ -5,8 +5,8 @@
     <div class="songes-menu">
         <ul>
             {% for item in songes %}
-                <li>
-                    <a href="{% url 'song_page' item.pk %}">
+                <li class="list-group-item list-group-item-success">
+                    <a href="{% url 'main:song_page' item.pk %}">
                         {{ item }}
                     </a>
                 </li>

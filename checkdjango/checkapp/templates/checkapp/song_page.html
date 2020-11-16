@@ -1,3 +1,6 @@
+{% extends 'checkapp/base.html' %}
+
+
 {% block content %}
     <h1>Песня</h1>
     <p class="songes-name">
@@ -9,4 +12,8 @@
     <p class="songes-hours">
         часов: {{ song.time }}
     </p>
+    <a href="{% url 'basket:add' song.id %}"
+       class="btn btn-success">
+        Купить
+    </a>
 {% endblock %}
