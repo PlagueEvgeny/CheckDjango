@@ -7,7 +7,7 @@ window.onload = function () {
             url: event.target.href,
             success: function (data) {
                 // console.log('response', data);
-                $('.basket-item-' + data.songe_basket_id).remove();
+                $('.songe-item-' + data.songe_basket_id).remove();
             }
         })
     })
