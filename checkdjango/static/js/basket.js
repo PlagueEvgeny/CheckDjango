@@ -1,6 +1,6 @@
 window.onload = function () {
     console.log("DOM loaded");
-    $('.basket li a').on('click', function (event) {
+    $('.remove_basket').on('click', function (event) {
         event.preventDefault();
         // console.log(event.target.href);
         $.ajax({
